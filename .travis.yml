@@ -1,0 +1,7 @@
+language: sh
+install:
+  - curl https://raw.githubusercontent.com/aureliojargas/clitest/master/clitest -o /tmp/clitest -v
+  - gsed -i'' '2s/^/set -x /' /tmp/clitest
+  - chmod +x /tmp/clitest
+
+script: ./.travis-test.sh
